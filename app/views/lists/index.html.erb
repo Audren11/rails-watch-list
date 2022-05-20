@@ -1,0 +1,25 @@
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/background.png);">
+  <div class="container">
+    <h1>Le Wagon brings <strong>tech skills</strong> to <strong>creative people</strong>!</h1>
+    <p>Change your life and learn to code at one of our campuses around the world.</p>
+    <%= link_to "New List", "lists_show_path", class: "btn btn-gradient" %>
+  </div>
+</div>
+
+<p id="notice"><%= notice %></p>
+
+  <h1>Movies</h1>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <% @lists.each do |list| %>
+          <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+            <%=link_to list.name, list_path(list), class:"btn btn-flat"%>
+            <%= link_to 'Delete', root_path(list), method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        <%end%>
+      </div>
+   </div>
+  </div>
+<br>
